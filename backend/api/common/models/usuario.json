@@ -1,0 +1,60 @@
+{
+  "name": "usuario",
+  "plural": "usuarios",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "email": {
+      "type": "string",
+      "required": true
+    },
+    "logado": {
+      "type": "boolean"
+    },
+    "nome": {
+      "type": "string",
+      "required": true
+    },
+    "perfil_id": {
+      "type": "number",
+      "required": true
+    },
+    "senha": {
+      "type": "string",
+      "required": true
+    }
+  },
+  "validations": [],
+  "relations": {
+    "livros": {
+      "type": "hasMany",
+      "model": "livro",
+      "foreignKey": "usuario_id",
+      "options": {
+        "nestRemoting": true
+      },
+      "through": "avaliacao"
+    },
+    "avaliacaos": {
+      "type": "hasMany",
+      "model": "avaliacao",
+      "foreignKey": "usuario_id",
+      "options": {
+        "nestRemoting": true
+      }
+    },
+    "perfil": {
+      "type": "belongsTo",
+      "model": "perfil",
+      "foreignKey": "perfil_id",
+      "options": {
+        "nestRemoting": true
+      }
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

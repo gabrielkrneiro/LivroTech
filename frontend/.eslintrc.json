@@ -1,0 +1,11 @@
+{
+    "extends": [
+        "google",
+        "eslint:recommended",
+        "plugin:vue/recommended"
+    ],
+    "rules": {
+        "vue/html-quotes": 0,
+        "no-console": 0
+    }
+  }

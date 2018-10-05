@@ -1,0 +1,40 @@
+{
+  "name": "categoria_livro",
+  "plural": "categorias_livro",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "categoria_id": {
+      "type": "number",
+      "required": true
+    },
+    "livro_id": {
+      "type": "number",
+      "required": true
+    }
+  },
+  "validations": [],
+  "relations": {
+    "livro": {
+      "type": "belongsTo",
+      "model": "livro",
+      "foreignKey": "livro_id",
+      "options": {
+        "nestRemoting": true
+      }
+    },
+    "categoria": {
+      "type": "belongsTo",
+      "model": "categoria",
+      "foreignKey": "categoria_id",
+      "options": {
+        "nestRemoting": true
+      }
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

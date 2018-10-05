@@ -1,0 +1,66 @@
+{
+  "_meta": {
+    "sources": [
+      "loopback/common/models",
+      "loopback/server/models",
+      "../common/models",
+      "./models"
+    ],
+    "mixins": [
+      "loopback/common/mixins",
+      "loopback/server/mixins",
+      "../common/mixins",
+      "./mixins"
+    ]
+  },
+  "User": {
+    "dataSource": "db"
+  },
+  "AccessToken": {
+    "dataSource": "db",
+    "public": false
+  },
+  "ACL": {
+    "dataSource": "db",
+    "public": false
+  },
+  "RoleMapping": {
+    "dataSource": "db",
+    "public": false,
+    "options": {
+      "strictObjectIDCoercion": true
+    }
+  },
+  "Role": {
+    "dataSource": "db",
+    "public": false
+  },
+  "autor": {
+    "dataSource": "mysql",
+    "public": true
+  },
+  "livro": {
+    "dataSource": "mysql",
+    "public": true
+  },
+  "avaliacao": {
+    "dataSource": "mysql",
+    "public": true
+  },
+  "categoria": {
+    "dataSource": "mysql",
+    "public": true
+  },
+  "categoria_livro": {
+    "dataSource": "mysql",
+    "public": true
+  },
+  "perfil": {
+    "dataSource": "mysql",
+    "public": true
+  },
+  "usuario": {
+    "dataSource": "mysql",
+    "public": true
+  }
+}

@@ -1,0 +1,44 @@
+{
+  "name": "avaliacao",
+  "plural": "avaliacoes",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "livro_id": {
+      "type": "number",
+      "required": true
+    },
+    "usuario_id": {
+      "type": "number",
+      "required": true
+    },
+    "nota": {
+      "type": "number",
+      "required": true
+    }
+  },
+  "validations": [],
+  "relations": {
+    "usuario": {
+      "type": "belongsTo",
+      "model": "usuario",
+      "foreignKey": "usuario_id",
+      "options": {
+        "nestRemoting": true
+      }
+    },
+    "livro": {
+      "type": "belongsTo",
+      "model": "livro",
+      "foreignKey": "livro_id",
+      "options": {
+        "nestRemoting": true
+      }
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

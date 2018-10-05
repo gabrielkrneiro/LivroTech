@@ -1,0 +1,51 @@
+.error-message
+{
+  flex-flow: column;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  width: 100%;
+}
+
+
+.input-search
+{
+  text-align: center;
+  border-bottom: 2px solid #0000001e;
+}
+
+input[custom-class=isc1],
+input[custom-class=isc2]
+{
+  background-color: transparent;
+  color: #000000;
+  border: none;
+  box-shadow: none;
+  font-size: 3em;
+  font-weight: 600;
+
+}
+
+input[custom-class=isc1]:focus,
+input[custom-class=isc2]:focus {
+  box-shadow: none;
+}
+
+input[custom-class=isc1]::placeholder,
+input[custom-class=isc2]::placeholder{
+  color: #000000;
+  opacity: .2;
+  font-weight: 600;
+}
+
+input[custom-class=isc1]
+{
+  width: 9.5em;
+}
+
+input[custom-class=isc2]
+{
+  text-align: center;
+}
+

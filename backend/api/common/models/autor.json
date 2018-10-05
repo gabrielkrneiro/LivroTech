@@ -1,0 +1,28 @@
+{
+  "name": "autor",
+  "plural": "autores",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "nome": {
+      "type": "string",
+      "required": true
+    }
+  },
+  "validations": [],
+  "relations": {
+    "livros": {
+      "type": "hasMany",
+      "model": "livro",
+      "foreignKey": "autor_id",
+      "options": {
+        "nestRemoting": true
+      }
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

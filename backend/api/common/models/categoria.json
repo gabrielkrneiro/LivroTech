@@ -1,0 +1,35 @@
+{
+  "name": "categoria",
+  "plural": "categorias",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "nome": {
+      "type": "string",
+      "required": true
+    }
+  },
+  "validations": [],
+  "relations": {
+    "livro": {
+      "type": "hasMany",
+      "model": "livro",
+      "foreignKey": "categoria_id",
+      "through": "categoria_livro",
+      "keyThrough": "livro_id"
+    },
+    "categoriaLivros": {
+      "type": "hasMany",
+      "model": "categoria_livro",
+      "foreignKey": "categoria_id",
+      "options": {
+        "nestRemoting": true
+      }
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

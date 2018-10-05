@@ -1,0 +1,30 @@
+$input-color: red;
+$input-background-color: black;
+
+.section-opcoes-painel
+{
+  padding: 2em 0;
+}
+
+.secao1
+{
+  .navbar
+  {
+    padding: 2em 1em;
+    border-bottom: 1px solid silver;
+
+    .search-input
+    {
+      margin-left: 4em;
+      font-weight: bold;
+    }
+  }
+}
+
+.secao2
+{
+  padding-top: 2em;
+
+}
+
+input { font-weight: bolder; color: $input-color}

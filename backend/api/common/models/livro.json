@@ -1,0 +1,72 @@
+{
+  "name": "livro",
+  "plural": "livros",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "titulo": {
+      "type": "string",
+      "required": true
+    },
+    "descricao": {
+      "type": "string",
+      "required": true
+    },
+    "capa": {
+      "type": "string",
+      "default": false
+    },
+    "autor_id": {
+      "type": "number",
+      "required": true
+    }
+  },
+  "validations": [],
+  "relations": {
+    "autor": {
+      "type": "belongsTo",
+      "model": "autor",
+      "foreignKey": "autor_id",
+      "options": {
+        "nestRemoting": true
+      }
+    },
+    "usuarios": {
+      "type": "hasMany",
+      "model": "usuario",
+      "foreignKey": "livro_id",
+      "options": {
+        "nestRemoting": true
+      },
+      "through": "avaliacao"
+    },
+    "avaliacoes": {
+      "type": "hasMany",
+      "model": "avaliacao",
+      "foreignKey": "livro_id",
+      "options": {
+        "nestRemoting": true
+      }
+    },
+    "categoria": {
+      "type": "hasMany",
+      "model": "categoria",
+      "foreignKey": "livro_id",
+      "through": "categoria_livro",
+      "keyThrough": "categoria_id"
+    },
+    "categoriaLivros": {
+      "type": "hasMany",
+      "model": "categoria_livro",
+      "foreignKey": "livro_id",
+      "options": {
+        "nestRemoting": true
+      }
+    }
+  },
+  "acls": [],
+  "methods": {}
+}
